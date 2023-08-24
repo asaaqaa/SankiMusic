@@ -14,23 +14,14 @@ from SankiMusic.modules.utils.decorators import (ActualAdminCB, language,
 
 
 def lanuages_keyboard(_):
-    keyboard = InlineKeyboard(row_width=3)
-    keyboard.add(
-        *[
-            (
-                InlineKeyboardButton(
-                    text=languages_present[i],
-                    callback_data=f"languages:{i}",
-                )
-            )
-            for i in languages_present
-        ]
-    )
+    keyboard = InlineKeyboard(row_width=2)
     keyboard.row(
         InlineKeyboardButton(
-            text=_["BACK_BUTTON"],
-            callback_data=f"settingsback_helper",
+            text=" 🇾🇪يمني 🇾🇪",
+            callback_data=f"languages:en",
         ),
+    )
+    keyboard.row(
         InlineKeyboardButton(
             text=_["CLOSE_BUTTON"], callback_data=f"close"
         ),
@@ -78,16 +69,16 @@ async def language_markup(client, CallbackQuery, _):
     old = await get_lang(CallbackQuery.message.chat.id)
     if str(old) == str(langauge):
         return await CallbackQuery.answer(
-            "You're already on same language", show_alert=True
+            "ʏᴏᴜ'ʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜsɪɴɢ sᴀᴍᴇ ʟᴀɴɢᴜᴀɢᴇ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ.", show_alert=True
         )
     try:
         _ = get_string(langauge)
         await CallbackQuery.answer(
-            "Successfully changed your language.", show_alert=True
+            "sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʜᴀɴɢᴇᴅ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇ.", show_alert=True
         )
     except:
         return await CallbackQuery.answer(
-            "Failed to change language or Language under update.",
+            "ғᴀɪʟᴇᴅ ᴛᴏ ᴄʜᴀɴɢᴇ ʟᴀɴɢᴜᴀɢᴇ ᴏʀ ᴛʜᴇ ʟᴀɴɢᴜᴀɢᴇ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ.",
             show_alert=True,
         )
     await set_lang(CallbackQuery.message.chat.id, langauge)
