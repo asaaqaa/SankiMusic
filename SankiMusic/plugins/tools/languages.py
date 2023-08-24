@@ -6,8 +6,8 @@ from pyrogram.types import InlineKeyboardButton, Message
 from SankiMusic.utilities.config import BANNED_USERS
 from SankiMusic.utilities.strings import get_command, get_string
 from SankiMusic import app
-from SankiMusic.modules.utils.database import get_lang, set_lang
-from SankiMusic.modules.utils.decorators import (ActualAdminCB, language,
+from SankiMusic.modules.main.database import get_lang, set_lang
+from SankiMusic.modules.main.decorators import (ActualAdminCB, language,
                                          languageCB)
 
 # Language
