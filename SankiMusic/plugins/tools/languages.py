@@ -3,8 +3,8 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, Message
 
-from config import BANNED_USERS
-from strings import get_command, get_string, languages_present
+from SankiMusic.utilities.config import BANNED_USERS
+from SankiMusic.utilities.strings import get_command, get_string, languages_present
 from SankiMusic import app
 from SankiMusic.utils.database import get_lang, set_lang
 from SankiMusic.utils.decorators import (ActualAdminCB, language,
